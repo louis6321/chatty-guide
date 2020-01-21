@@ -1,0 +1,139 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Louis's Chatty Config</title>
+<style>
+    body {
+        background-color: black;
+        font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+        color: white;
+    }
+    h1 {
+        color: white;
+        font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+    }
+    h2 {
+        color: white;
+        font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+    }
+    h2 a {
+        color: white;
+        font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+    }
+    body a {
+        color: white;
+    }
+</style></head>
+<body>
+    <h1><center>Louis6321's Chatty Configuration Guide for Twitch Mods</center></h1>
+    <h2><center>Download Chatty: <a href="https://github.com/chatty/chatty/releases" target="_new">https://github.com/chatty/chatty/releases</a></center></h2>
+    <center><font size="2">Usually the latest version (even if it's a beta version) is the best to use.<br>The betas are usually stable and contain the latest and greatest updates.<br><span style="color:red">This guide is usually updated based on the latest beta version.</span>
+    <br><br>
+    <b>Updated: 2020-01-06 - <a href="https://github.com/chatty/chatty/releases/tag/v0.11-b4" target="_new">Chatty v0.11-b4</a></b>
+    </font></center><br><br>
+    
+    <center>
+    This is my personal configuration that I use for modding Twitch channels of all sizes.<br>Much of it is personal preference. Use as a starting point and adjust as preferred. <img src="/smile.png"><br><br>
+    Questions? DM me on Discord: Louis#6321<br>or <a href="https://discord.gg/WTuqGeJ" target="_new">Chatty Discord Server</a><br><br>
+    
+    <img src="/LookAndFeel2.png"><br><br>
+    <img src="/DarkSmooth.png"><br><br>
+    <img src="/MsgColors4.png"><br>
+<pre>
+config:info start:[ModAction]
+config:info start:[AutoMod]
+</pre>
+<br>
+    <img src="/Usercolors.png"><br><br>
+    <img src="/Emoticons4.png"><br><br>
+    <img src="/Fonts2.png"><br><br>
+    <img src="/Chat2.png"><br><br>
+    <img src="/Messages2.png"><br><br>
+    <img src="/Moderation3.png"><br><br>
+    <img src="/Names3.png"><br><br>
+    <img src="/Highlight4.png"><br><br>
+    <img src="/Window.png"><br><br>
+    <img src="/Tabs.png"><br><br>
+    <img src="/Other2.png"><br><br>
+    <img src="/Commands.png"><br><br><span style="color:white">^ This screenshot is now a little bit out-of-date in terms of the commands shown; it mostly exists to show you which buttons to click.<br>The below text, which you can copy/paste, has all the latest changes.</span><br><br><br>
+    <span style="color:white"><b><u>Custom Commands</u></b><br>
+    
+<pre>
+/permit !permit $$1
+/report /openUrl https://twitch.tv/$$1/report
+/Name /openUrl https://twitch-tools.rootonline.de/username_changelogs_search.php?q=$$1
+/NameID /openUrl https://twitch-tools.rootonline.de/username_changelogs_search.php?q=$$(user-id)
+/logs /openUrl https://cbenni.com/$(chan)/?user=$$1
+/gift /openUrl https://www.twitch.tv/products/$(chan)/ticket?recipient=$$1
+/FAge /openUrl https://twitch.center/follow?username=$$1&channel=$(chan)
+/Regular !regulars add $$1
+/remotes /chain /refresh ffz|/refresh bttvemotes|/refresh emoticons|/refresh badges|/refresh ffzglobal
+/card /openUrl https://www.twitch.tv/popout/$(chan)/viewercard/$$1
+/modlookup /openUrl https://modlookup.3v.fi/u/$$1
+/both /chain /logs $$1|/card $$1
+/translate /openUrl https://translate.google.com/#view=home&op=translate&sl=auto&tl=en&text=$$urlencode($(msg))
+/modunlock /set spamProtection 95/30
+/modrelock /set spamProtection 18/30
+/checklock /get spamProtection
+/bot /ban $$1 Likely Bot
+/english /timeout $$1 120 English only, thank you
+</pre>
+        <br>
+        
+        <b><u>User Context Menu</u></b> (yes, the first line is a single hyphen)<br>
+        
+<pre>
+-
+Mod Lookup=/modlookup $$1
+Name History=/name $$1
+Report User=/report $$1
+Twitch Mod Card=/card $$1
+Translate=/translate
+</pre><br>
+        
+        <b><u>Channel Context Menu</u></b> (yes, the first line is a single hyphen)<br>
+        
+<pre>
+-
+Moobot=/openUrl https://moo.bot/$(chan)
+Fossabot=/openUrl https://fossabot.com/a/$(chan)/dashboard
+Dashboard=/openUrl https://dashboard.twitch.tv/u/$(chan)/stream-manager
+Mod Settings=/openUrl https://dashboard.twitch.tv/u/$(chan)/settings/moderation
+Chat Popout=/openUrl https://www.twitch.tv/popout/$(chan)/chat?popout=
+Viewer List=/openUrl https://t.3v.fi/chatters/?ch=$(chan)
+Refresh Emotes=/remotes
+-
+Unlock Spam=/modunlock
+Lock Spam=/modrelock
+Check Spam=/checklock
+</pre><br>
+        
+        <b><u>User Dialog Buttons</u></b><br>
+
+<pre>
+@a1
+Delete[1]=/delete $$(msg-id)
+.1s, 2m[2], 10m[3], 1h[4], 1d[5], 7d[7], /Ban[B], /Unban[U]
+@a2
+./Bot[G]
+./Report
+.Name History=/NameID $$1=
+./English[E]
+.Mod Card=/card $$1
+.Translate=/translate $$(msg)
+
+@AutoMod
+.Approve[A]=/Automod_approve
+.Deny[D]=/Automod_deny
+</pre>
+        
+        <br>
+        
+    </span>
+    <img src="/tab-completion3.png"><br><br>
+    <img src="/Advanced.png"><br><br><br>
+    
+    And finally, if you like rounded chat badges, I've made rounded badges for all of the common badges and bit badges up to 100k.<br>
+    <a href="/Rounded-Badges.zip"><b><u>Download Rounded Badges</u></b></a><br><br>
+    <img src="/MainBadgesGuide.png"><br><br><img src="/BitsBadgesGuide.png"> <img src="/FFZBadgeGuide.png"><br><br>
+    </center>
+    
+</body>
+</html>
