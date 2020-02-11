@@ -26,7 +26,7 @@
     <h2><center>Download Chatty: <a href="https://github.com/chatty/chatty/releases" target="_new">https://github.com/chatty/chatty/releases</a></center></h2>
     <center><font size="2">Usually the latest version (even if it's a beta version) is the best to use.<br>The betas are usually stable and contain the latest and greatest updates.<br><span style="color:red">This guide is usually updated based on the latest beta version.</span>
     <br><br>
-    <b>Updated: 2020-02-05 - <a href="https://github.com/chatty/chatty/releases/tag/v0.12-b1" target="_new">Chatty v0.12-b1</a></b>
+    <b>Updated: 2020-02-12 - <a href="https://github.com/chatty/chatty/releases/tag/v0.12-b1" target="_new">Chatty v0.12-b1</a></b>
     </font></center><br><br>
     
     <center>
@@ -57,14 +57,12 @@ config:info start:[AutoMod]
     <span style="color:white"><b><u>Custom Commands</u></b><br>
     
 <pre>
-/permit !permit $$1
 /report /openUrl https://twitch.tv/$$1/report
+/checkbot /openUrl https://customapi-backend.aidenwallis.co.uk/api/v1/twitch/botStatus/$$1
 /Name /openUrl https://twitch-tools.rootonline.de/username_changelogs_search.php?q=$$1
 /NameID /openUrl https://twitch-tools.rootonline.de/username_changelogs_search.php?q=$$(user-id)
 /logs /openUrl https://cbenni.com/$(chan)/?user=$$1
-/gift /openUrl https://www.twitch.tv/products/$(chan)/ticket?recipient=$$1
 /FAge /openUrl https://twitch.center/follow?username=$$1&channel=$(chan)
-/Regular !regulars add $$1
 /remotes /chain /refresh ffz|/refresh bttvemotes|/refresh emoticons|/refresh badges|/refresh ffzglobal
 /card /openUrl https://www.twitch.tv/popout/$(chan)/viewercard/$$1
 /modlookup /openUrl https://modlookup.3v.fi/u/$$1
@@ -74,6 +72,7 @@ config:info start:[AutoMod]
 /modrelock /set spamProtection 18/30
 /checklock /get spamProtection
 /bot /ban $$1 Likely Bot
+/promotion /ban $$1 Promotion/Advertising
 /english /timeout $$1 120 English only, thank you
 </pre>
         <br>
@@ -114,9 +113,10 @@ Delete[1]=/delete $$(msg-id)
 .1s, 2m[2], 10m[3], 1h[4], 1d[5], 7d[7], /Ban[B], /Unban[U]
 @a2
 ./Bot[G]
+./Promotion[P]
+./English[E]
 ./Report
 .Name History=/NameID $$1=
-./English[E]
 .Mod Card=/card $$1
 .Translate=/translate $$(msg)
 
