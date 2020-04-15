@@ -59,8 +59,6 @@ config:info start:[AutoMod]
 <pre>
 /report /openUrl https://twitch.tv/$$1/report
 /checkbot /openUrl https://customapi-backend.aidenwallis.co.uk/api/v1/twitch/botStatus/$$1
-/Name /openUrl https://twitch-tools.rootonline.de/username_changelogs_search.php?q=$$1
-/NameID /openUrl https://twitch-tools.rootonline.de/username_changelogs_search.php?q=$$(user-id)
 /logs /openUrl https://cbenni.com/$(chan)/?user=$$1
 /FAge /openUrl https://twitch.center/follow?username=$$1&channel=$(chan)
 /remotes /chain /refresh ffz|/refresh bttvemotes|/refresh emoticons|/refresh badges|/refresh ffzglobal
@@ -82,7 +80,6 @@ config:info start:[AutoMod]
 <pre>
 -
 Mod Lookup=/modlookup $$1
-Name History=/name $$1
 Report User=/report $$1
 Twitch Mod Card=/card $$1
 Translate=/translate
@@ -117,7 +114,6 @@ Delete[1]=/delete $$(msg-id)
 ./Promotion[P]
 ./English[E]
 ./Report
-.Name History=/NameID $$1=
 .Mod Card=/card $$1
 .Translate=/translate $$(msg)
 
