@@ -59,12 +59,10 @@ config:info start:[AutoMod]
 <pre>
 /report /openUrl https://twitch.tv/$$1/report
 /checkbot /openUrl https://customapi-backend.aidenwallis.co.uk/api/v1/twitch/botStatus/$$1
-/logs /openUrl https://cbenni.com/$(chan)/?user=$$1
 /FAge /openUrl https://twitch.center/follow?username=$$1&channel=$(chan)
 /remotes /chain /refresh ffz|/refresh bttvemotes|/refresh emoticons|/refresh badges|/refresh ffzglobal
 /card /openUrl https://www.twitch.tv/popout/$(chan)/viewercard/$$1
 /modlookup /openUrl https://modlookup.3v.fi/u/$$1
-/both /chain /logs $$1|/card $$1
 /translate /openUrl https://translate.google.com/#view=home&op=translate&sl=auto&tl=en&text=$$urlencode($(msg))
 /modunlock /set spamProtection 95/30
 /modrelock /set spamProtection 18/30
