@@ -139,7 +139,7 @@ Delete[1]=/delete $$(msg-id)
     <img src="/images/logtofile.png"><br>
     Ignore my blacklisted channels (you can blacklist any channels you don't want logged, or you can set it to whitelist to only log specified channels).<br><br>
 
-    Add these two lines to your Chatty Custom Commands:
+    Add these two lines to your Chatty Custom Commands (but change the "C:/Users/Louis/.chatty/logs/" bit to where your logs are):
 <pre>
 _chan $replace(#$(chan),#\$,\$)
 /glogg /proc exec "C:\\Program Files\\glogg\\glogg.exe" C:/Users/Louis/.chatty/logs/$(_chan)/$datetime(yyyy-MM-dd)_$(_chan).log
