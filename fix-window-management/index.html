@@ -1,0 +1,48 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Fix Window Management - Louis's Chatty Config</title>
+<style>
+    body {
+        background-color: black;
+        font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+        color: white;
+    }
+    h1 {
+        color: white;
+        font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+    }
+    h2 {
+        color: white;
+        font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+    }
+    h2 a {
+        color: white;
+        font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+    }
+    body a {
+        color: white;
+    }
+</style></head>
+<body>
+    <h1><center>Fixing Window Management</center></h1>
+    <h2><center>
+        Chatty's dark skins don't support window management (like snapping) within Windows.<br>Follow these steps to fix that.
+    </center><br><br>
+    
+    <center>
+    Start by executing this command in Chatty:<br>
+    <pre>
+/set lafCustomTheme windowDecoration off
+    </pre><br><br>
+    Restart Chatty and window management should now be working, but the title bar will either be white or a system colour, so let's fix that.<br><br>
+
+    Open RegEdit (Registry Editor in the start menu).<br>
+    Naigate to: HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM<br>
+    Change the value of "AccentColor" to: ff585a5d<br>
+    Add a new 32-bit DWORD with name "AccentColorInactive" (without quotes) and a value of: ff484a4c<br><br><br>
+
+    That should fix the titlebar colours, bit the text in the titlebar is probably still too big.<br>
+    Run this reg file to fix that: <a href="/Title_bars_text_size-7.reg">Title_bars_text_size-7.reg</a><br>
+    You will need to logout and log back in (or reboot) for this change to apply.
+    </center>
+    
+</body>
+</html>
