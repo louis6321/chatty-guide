@@ -26,7 +26,7 @@
     <h2><center>Download Chatty: <a href="https://github.com/chatty/chatty/releases" target="_new">https://github.com/chatty/chatty/releases</a></center></h2>
     <center><font size="2">Usually the latest version (even if it's a beta version) is the best to use.<br>The betas are usually stable and contain the latest and greatest updates.<br><span style="color:red">This guide is usually updated based on the latest beta version.</span>
     <br><br>
-    <b>Updated: 2021-02-13 - <a href="https://github.com/chatty/chatty/releases/tag/v0.14-b5" target="_new">Chatty v0.14-b5</a></b>
+    <b>Updated: 2021-03-12 - <a href="https://github.com/chatty/chatty/releases/tag/v0.14" target="_new">Chatty v0.14</a></b>
     </font></center><br><br>
     
     <center>
@@ -134,10 +134,10 @@ Check Spam=/checklock
     <a href="/Rounded-Badges.zip"><b><u>Download Rounded Badges</u></b></a><br><br>
     <img src="/images/MainBadgesGuide.png"><br><br><img src="/images/BitsBadgesGuide.png"> <img src="/images/FFZBadgeGuide.png"><br><br><br><br><br><br><br><br>
 
-    <h1><b><u>Glogg Setup Guide</u></b></h1><br>(most people won't want/need this)<br><br>
+    <h1><b><u>Klogg Setup Guide</u></b></h1><br>(most people won't want/need this)<br><br>
 
-    "Glogg" is a program that lets you view log files neatly, follow them live and perform advanced searches.<br>
-    You can download it here: <a href="https://glogg.bonnefon.org/download.html" target="_new"><u>https://glogg.bonnefon.org/download.html</u></a><br><br>
+    "Klogg" is a program that lets you view log files neatly, follow them live and perform advanced searches.<br>
+    You can download it here: <a href="https://github.com/variar/klogg/releases/latest" target="_new"><u>https://github.com/variar/klogg/releases/latest</u></a><br><br>
     
     Setup your Chatty "Log to File" settings like this:<br>
     <img src="/images/logtofile.png"><br>
@@ -146,14 +146,14 @@ Check Spam=/checklock
     Add these two lines to your Chatty Custom Commands (but change the "C:/Users/Louis/.chatty/logs/" bit to where your logs are stored, as per your "Log to file" settings):
 <pre>
 _chan $replace(#$(chan),#\$,\$)
-/glogg /proc exec "C:\\Program Files\\glogg\\glogg.exe" C:/Users/Louis/.chatty/logs/$(_chan)/$datetime(yyyy-MM-dd)_$(_chan).log
+/klogg /proc exec "C:\\Program Files\\klogg\\klogg.exe" C:/Users/Louis/.chatty/logs/$(_chan)/$datetime(yyyy-MM-dd)_$(_chan).log
 </pre>
 And add this to your Channel Context Menu:
 <pre>
-Open Glogg=/glogg
+Open Klogg=/klogg
 </pre>
 
-Within Glogg, go to Tools -- Options -- Untick "Load last session" -- Go to the Advanced tab -- Set "Time Interval" to 200.<br><br><br><br>
+Within Klogg, go to Tools -- Options -- Untick "Load last session" -- Go to the Advanced tab -- Set "Time Interval" to 200.<br><br><br><br>
 
 <h1><b><u>Fix Window Management</u></b></h1><br><br>
 
