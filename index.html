@@ -108,21 +108,21 @@ Check Spam=/checklock
         <b><u>User Dialog Buttons</u></b><br>
 
 <pre>
-    @a1
-    Delete[1]=/delete $$(msg-id)
-    .1s, 2m[2], 10m[3], 1h[4], 1d[5], 7d[7], 14d[8], /Ban[B], /Unban[U]
-    @a2
-    ./Bot[G]
-    ./Promotion[F]
-    ./English[E]
-    ./Spoiler[S]
-    ./Report
-    .Mod Card=/card $$1
-    .Translate=/translate $$(msg)
-    
-    @AutoMod
-    .Approve[A]=/Automod_approve
-    .Deny[D]=/Automod_deny
+@a1
+Delete[1]=/delete $$(msg-id)
+.1s, 2m[2], 10m[3], 1h[4], 1d[5], 7d[7], 14d[8], /Ban[B], /Unban[U]
+@a2
+./Bot[G]
+./Promotion[F]
+./English[E]
+./Spoiler[S]
+./Report
+.Mod Card=/card $$1
+.Translate=/translate $$(msg)
+
+@AutoMod
+.Approve[A]=/Automod_approve
+.Deny[D]=/Automod_deny
 </pre>
         
         <br>
